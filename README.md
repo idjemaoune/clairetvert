@@ -91,6 +91,22 @@ Le site est configuré pour être déployé automatiquement sur GitHub Pages :
    - Images optimisées (quand ajoutées)
    - Code moderne compatible navigateurs
 
+### Activation manuelle de GitHub Pages
+
+Si le déploiement automatique nécessite une activation manuelle :
+
+1. Aller dans **Settings** → **Pages** dans le repository GitHub
+2. Sous **Source**, sélectionner **GitHub Actions**
+3. Le workflow de déploiement sera automatiquement activé
+4. Le site sera accessible à `https://idjemaoune.github.io/clairetvert`
+
+### Note sur le domaine personnalisé
+
+Si vous souhaitez utiliser un domaine personnalisé (comme `www.clairetvert.fr`), vous devez :
+1. Configurer les DNS pour pointer vers GitHub Pages
+2. Ajouter un fichier CNAME avec votre domaine
+3. Vérifier le domaine dans les paramètres GitHub Pages
+
 ## 📋 Contenu aligné sur le concept de marque
 
 ### Messages clés
