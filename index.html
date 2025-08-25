@@ -7,7 +7,7 @@
     <meta name="description" content="Service de nettoyage éco-responsable avec méthode 'Eau juste', reporting photo et matériel 100% professionnel. Particuliers, syndics, professionnels.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
@@ -29,7 +29,10 @@
                     <a href="#methode" class="nav-link">Méthode Eco</a>
                     <a href="#qualite" class="nav-link">Qualité</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <a href="#contact" class="btn-primary">Devis gratuit</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+                        <i data-lucide="sun" class="theme-icon"></i>
+                    </button>
+                    <a href="#contact" class="btn-primary">Rejoindre la liste</a>
                 </div>
                 
                 <div class="nav-toggle" id="nav-toggle">
@@ -51,10 +54,19 @@
                     Service de nettoyage éco-responsable avec méthode "Eau juste", 
                     reporting photo et matériel 100% professionnel.
                 </p>
+                <div class="launch-banner">
+                    <div class="launch-icon">
+                        <i data-lucide="rocket"></i>
+                    </div>
+                    <div class="launch-text">
+                        <strong>Lancement imminent !</strong>
+                        <span>Inscrivez-vous pour être informé dès notre arrivée dans votre région</span>
+                    </div>
+                </div>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-primary btn-large">
-                        <i data-lucide="phone"></i>
-                        Devis en 48h
+                        <i data-lucide="bell"></i>
+                        Rejoindre la liste d'attente
                     </a>
                     <a href="#methode" class="btn-secondary btn-large">
                         <i data-lucide="leaf"></i>
@@ -79,6 +91,111 @@
             </div>
             
             <div class="hero-image">
+                <!-- Illustration de propreté -->
+                <div class="cleaning-illustration">
+                    <svg viewBox="0 0 400 300" class="cleaning-svg">
+                        <!-- Maison propre -->
+                        <g class="house">
+                            <rect x="100" y="120" width="200" height="120" fill="var(--bg-primary)" stroke="var(--green-accent)" stroke-width="3" rx="10"/>
+                            <!-- Toit -->
+                            <polygon points="90,120 200,60 310,120" fill="var(--green-primary)"/>
+                            <!-- Fenêtres brillantes -->
+                            <rect x="120" y="140" width="40" height="40" fill="var(--blue)" opacity="0.7" rx="5">
+                                <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+                            </rect>
+                            <rect x="240" y="140" width="40" height="40" fill="var(--blue)" opacity="0.7" rx="5">
+                                <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                            </rect>
+                            <!-- Porte -->
+                            <rect x="180" y="190" width="40" height="50" fill="var(--green-dark)" rx="5"/>
+                            <circle cx="210" cy="215" r="2" fill="var(--orange)"/>
+                        </g>
+                        
+                        <!-- Bulles de savon -->
+                        <g class="bubbles">
+                            <circle cx="80" cy="80" r="6" fill="var(--blue-light)" opacity="0.8">
+                                <animate attributeName="cy" values="80;40;80" dur="3s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="320" cy="100" r="4" fill="var(--purple-light)" opacity="0.7">
+                                <animate attributeName="cy" values="100;60;100" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="350" cy="140" r="8" fill="var(--teal-light)" opacity="0.6">
+                                <animate attributeName="cy" values="140;90;140" dur="4s" begin="1s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="4s" begin="1s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="60" cy="160" r="5" fill="var(--green-light)" opacity="0.8">
+                                <animate attributeName="cy" values="160;120;160" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Éclat de propreté -->
+                        <g class="sparkles">
+                            <g transform="translate(130,110)">
+                                <path d="M0,-8 L2,-2 L8,0 L2,2 L0,8 L-2,2 L-8,0 L-2,-2 Z" fill="var(--orange)" opacity="0.9">
+                                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="1s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+                            <g transform="translate(260,90)">
+                                <path d="M0,-6 L1.5,-1.5 L6,0 L1.5,1.5 L0,6 L-1.5,1.5 L-6,0 L-1.5,-1.5 Z" fill="var(--pink)" opacity="0.8">
+                                    <animateTransform attributeName="transform" type="rotate" values="360;0" dur="1.5s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.2s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+                            <g transform="translate(170,200)">
+                                <path d="M0,-4 L1,-1 L4,0 L1,1 L0,4 L-1,1 L-4,0 L-1,-1 Z" fill="var(--purple)" opacity="0.7">
+                                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2.5s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.8s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+                        </g>
+                        
+                        <!-- Outils de nettoyage -->
+                        <g class="cleaning-tools">
+                            <!-- Spray de nettoyage -->
+                            <g transform="translate(40,200)">
+                                <rect x="0" y="0" width="12" height="25" fill="var(--green-accent)" rx="2"/>
+                                <rect x="2" y="-5" width="8" height="8" fill="var(--blue)" rx="1"/>
+                                <line x1="6" y1="-10" x2="6" y2="-15" stroke="var(--blue)" stroke-width="2"/>
+                                <!-- Particules de spray -->
+                                <circle cx="15" cy="-8" r="1" fill="var(--blue-light)" opacity="0.8">
+                                    <animate attributeName="cx" values="15;25;35" dur="1s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.8;0.3;0" dur="1s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="18" cy="-5" r="0.8" fill="var(--blue-light)" opacity="0.6">
+                                    <animate attributeName="cx" values="18;28;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.6;0.2;0" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
+                                </circle>
+                            </g>
+                            
+                            <!-- Chiffon -->
+                            <g transform="translate(330,220)">
+                                <ellipse cx="0" cy="0" rx="15" ry="8" fill="var(--orange)" opacity="0.9">
+                                    <animateTransform attributeName="transform" type="rotate" values="0;5;0;-5;0" dur="2s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="0" cy="0" rx="12" ry="6" fill="var(--orange-light)" opacity="0.7"/>
+                            </g>
+                        </g>
+                        
+                        <!-- Feuilles vertes pour l'aspect éco -->
+                        <g class="eco-leaves">
+                            <g transform="translate(50,50)">
+                                <path d="M0,0 Q-5,-8 -2,-15 Q5,-12 8,-5 Q5,2 0,0" fill="var(--green-accent)" opacity="0.8">
+                                    <animateTransform attributeName="transform" type="rotate" values="0;10;0;-10;0" dur="3s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+                            <g transform="translate(340,60)">
+                                <path d="M0,0 Q-4,-6 -1,-12 Q4,-9 6,-3 Q3,1 0,0" fill="var(--teal)" opacity="0.7">
+                                    <animateTransform attributeName="transform" type="rotate" values="0;-8;0;8;0" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                
                 <div class="hero-card">
                     <div class="card-header">
                         <i data-lucide="check-circle" class="text-green"></i>
@@ -153,7 +270,11 @@
         <div class="container">
             <div class="section-header">
                 <h2>Nos Offres</h2>
-                <p>3 segments, 3 niveaux de service pour répondre à tous vos besoins</p>
+                <p>3 segments, 3 niveaux de service - <strong>Lancement prévu pour 2025</strong></p>
+                <div class="coming-soon-badge">
+                    <i data-lucide="clock"></i>
+                    <span>Services en cours de finalisation</span>
+                </div>
             </div>
             
             <div class="offers-tabs">
@@ -180,14 +301,14 @@
                             <div class="offer-price">Sur devis</div>
                         </div>
                         <ul class="offer-features">
-                            <li><i data-lucide="check"></i> Ménage courant (surfaces, sols, SDB/WC)</li>
-                            <li><i data-lucide="check"></i> Cuisine légère</li>
-                            <li><i data-lucide="check"></i> Dépoussiérage complet</li>
-                            <li><i data-lucide="check"></i> Sortie des déchets</li>
-                            <li><i data-lucide="check"></i> Produits écolabellisés</li>
-                            <li><i data-lucide="check"></i> Fréquence au choix</li>
+                            <li><i data-lucide="check"></i> Nettoyage complet (surfaces, sols, sanitaires)</li>
+                            <li><i data-lucide="check"></i> Cuisine et espaces de vie</li>
+                            <li><i data-lucide="check"></i> Dépoussiérage et aspiration</li>
+                            <li><i data-lucide="check"></i> Gestion des déchets</li>
+                            <li><i data-lucide="check"></i> Produits écolabellisés exclusivement</li>
+                            <li><i data-lucide="check"></i> Planning flexible selon vos besoins</li>
                         </ul>
-                        <button class="btn-outline">Choisir</button>
+                        <button class="btn-outline" disabled>Bientôt disponible</button>
                     </div>
                     
                     <div class="offer-card featured">
@@ -198,12 +319,13 @@
                         </div>
                         <ul class="offer-features">
                             <li><i data-lucide="check"></i> Tout l'Essentiel +</li>
-                            <li><i data-lucide="check"></i> Vitres intérieures périodiques</li>
-                            <li><i data-lucide="check"></i> Détail cuisine (électroménagers)</li>
-                            <li><i data-lucide="check"></i> Changement de draps</li>
-                            <li><i data-lucide="check"></i> Repassage léger</li>
+                            <li><i data-lucide="check"></i> Nettoyage vitres intérieures</li>
+                            <li><i data-lucide="check"></i> Dégraissage approfondi cuisine</li>
+                            <li><i data-lucide="check"></i> Détartrage sanitaires</li>
+                            <li><i data-lucide="check"></i> Nettoyage électroménager (extérieur)</li>
+                            <li><i data-lucide="check"></i> Service linge (changement draps)</li>
                         </ul>
-                        <button class="btn-primary">Choisir</button>
+                        <button class="btn-primary" disabled>Bientôt disponible</button>
                     </div>
                     
                     <div class="offer-card">
@@ -213,13 +335,13 @@
                         </div>
                         <ul class="offer-features">
                             <li><i data-lucide="check"></i> Tout l'Essentiel+ +</li>
-                            <li><i data-lucide="check"></i> Grand ménage trimestriel</li>
-                            <li><i data-lucide="check"></i> Désinfection vapeur</li>
-                            <li><i data-lucide="check"></i> Inventaire & réassort</li>
-                            <li><i data-lucide="check"></i> <strong>Reporting photo</strong></li>
-                            <li><i data-lucide="check"></i> <strong>Manager dédié</strong></li>
+                            <li><i data-lucide="check"></i> Grand nettoyage semestriel</li>
+                            <li><i data-lucide="check"></i> Désinfection vapeur complète</li>
+                            <li><i data-lucide="check"></i> Nettoyage tapis et moquettes</li>
+                            <li><i data-lucide="check"></i> <strong>Reporting photo détaillé</strong></li>
+                            <li><i data-lucide="check"></i> <strong>Responsable qualité dédié</strong></li>
                         </ul>
-                        <button class="btn-outline">Choisir</button>
+                        <button class="btn-outline" disabled>Bientôt disponible</button>
                     </div>
                 </div>
             </div>
@@ -233,14 +355,14 @@
                             <div class="offer-price">Sur devis</div>
                         </div>
                         <ul class="offer-features">
-                            <li><i data-lucide="check"></i> Parties communes</li>
-                            <li><i data-lucide="check"></i> Rampes et paliers</li>
-                            <li><i data-lucide="check"></i> Sortie/entrée bacs</li>
-                            <li><i data-lucide="check"></i> Petit désencombrement</li>
-                            <li><i data-lucide="check"></i> Relevé incidents</li>
-                            <li><i data-lucide="check"></i> Affichage</li>
+                            <li><i data-lucide="check"></i> Nettoyage parties communes complètes</li>
+                            <li><i data-lucide="check"></i> Escaliers, rampes et paliers</li>
+                            <li><i data-lucide="check"></i> Halls d'entrée et boîtes aux lettres</li>
+                            <li><i data-lucide="check"></i> Gestion des espaces déchets</li>
+                            <li><i data-lucide="check"></i> Nettoyage sols et surfaces vitrées</li>
+                            <li><i data-lucide="check"></i> Rapport de passage hebdomadaire</li>
                         </ul>
-                        <button class="btn-outline">Choisir</button>
+                        <button class="btn-outline" disabled>Bientôt disponible</button>
                     </div>
                     
                     <div class="offer-card featured">
@@ -251,13 +373,13 @@
                         </div>
                         <ul class="offer-features">
                             <li><i data-lucide="check"></i> Tout l'Essentiel +</li>
-                            <li><i data-lucide="check"></i> Autolaveuse mensuelle</li>
-                            <li><i data-lucide="check"></i> Vitres cages d'escaliers</li>
-                            <li><i data-lucide="check"></i> Nettoyage parkings</li>
-                            <li><i data-lucide="check"></i> Local poubelles</li>
-                            <li><i data-lucide="check"></i> Désinfection trimestrielle</li>
+                            <li><i data-lucide="check"></i> Autolaveuse haute performance</li>
+                            <li><i data-lucide="check"></i> Nettoyage vitres extérieures (RDC)</li>
+                            <li><i data-lucide="check"></i> Nettoyage parkings et caves</li>
+                            <li><i data-lucide="check"></i> Désinfection locaux techniques</li>
+                            <li><i data-lucide="check"></i> Intervention urgence 48h</li>
                         </ul>
-                        <button class="btn-primary">Choisir</button>
+                        <button class="btn-primary" disabled>Bientôt disponible</button>
                     </div>
                     
                     <div class="offer-card">
@@ -267,13 +389,13 @@
                         </div>
                         <ul class="offer-features">
                             <li><i data-lucide="check"></i> Tout l'Essentiel+ +</li>
-                            <li><i data-lucide="check"></i> Tournées renforcées</li>
-                            <li><i data-lucide="check"></i> Mini-gardiennage propreté</li>
-                            <li><i data-lucide="check"></i> <strong>Reporting mensuel KPI</strong></li>
-                            <li><i data-lucide="check"></i> Astreinte 6j/7</li>
-                            <li><i data-lucide="check"></i> Suivi conso d'eau</li>
+                            <li><i data-lucide="check"></i> Nettoyage façades et vitres haute</li>
+                            <li><i data-lucide="check"></i> Remise en état après travaux</li>
+                            <li><i data-lucide="check"></i> <strong>Suivi digital avec photos</strong></li>
+                            <li><i data-lucide="check"></i> Service d'urgence 24h/7j</li>
+                            <li><i data-lucide="check"></i> Contrôle qualité mensuel certifié</li>
                         </ul>
-                        <button class="btn-outline">Choisir</button>
+                        <button class="btn-outline" disabled>Bientôt disponible</button>
                     </div>
                 </div>
             </div>
@@ -287,14 +409,14 @@
                             <div class="offer-price">Sur devis</div>
                         </div>
                         <ul class="offer-features">
-                            <li><i data-lucide="check"></i> Bureaux & salles réunion</li>
-                            <li><i data-lucide="check"></i> Sanitaires & cafétéria</li>
-                            <li><i data-lucide="check"></i> Protocole "clean desk"</li>
-                            <li><i data-lucide="check"></i> Réassort consommables</li>
-                            <li><i data-lucide="check"></i> Créneaux hors horaires</li>
-                            <li><i data-lucide="check"></i> Plan affiché</li>
+                            <li><i data-lucide="check"></i> Bureaux et espaces de travail</li>
+                            <li><i data-lucide="check"></i> Sanitaires et espaces communs</li>
+                            <li><i data-lucide="check"></i> Nettoyage postes informatiques</li>
+                            <li><i data-lucide="check"></i> Vidage corbeilles et recyclage</li>
+                            <li><i data-lucide="check"></i> Intervention hors horaires bureau</li>
+                            <li><i data-lucide="check"></i> Contrôle sécurité et accès</li>
                         </ul>
-                        <button class="btn-outline">Choisir</button>
+                        <button class="btn-outline" disabled>Bientôt disponible</button>
                     </div>
                     
                     <div class="offer-card featured">
@@ -305,13 +427,13 @@
                         </div>
                         <ul class="offer-features">
                             <li><i data-lucide="check"></i> Tout l'Essentiel +</li>
-                            <li><i data-lucide="check"></i> Désinfection points contact</li>
-                            <li><i data-lucide="check"></i> Vitres périodiques</li>
-                            <li><i data-lucide="check"></i> Moquettes injection/extraction</li>
-                            <li><i data-lucide="check"></i> Autolaveuse > 300 m²</li>
-                            <li><i data-lucide="check"></i> <strong>Contrôles bimensuels</strong></li>
+                            <li><i data-lucide="check"></i> Désinfection quotidienne zones contact</li>
+                            <li><i data-lucide="check"></i> Nettoyage vitres et cloisons</li>
+                            <li><i data-lucide="check"></i> Shampoing moquettes et sièges</li>
+                            <li><i data-lucide="check"></i> Nettoyage équipements > 500 m²</li>
+                            <li><i data-lucide="check"></i> <strong>Audit qualité bimensuel</strong></li>
                         </ul>
-                        <button class="btn-primary">Choisir</button>
+                        <button class="btn-primary" disabled>Bientôt disponible</button>
                     </div>
                     
                     <div class="offer-card">
@@ -321,13 +443,13 @@
                         </div>
                         <ul class="offer-features">
                             <li><i data-lucide="check"></i> Tout l'Essentiel+ +</li>
-                            <li><i data-lucide="check"></i> Manager QHSE dédié</li>
-                            <li><i data-lucide="check"></i> Audits & protocoles renforcés</li>
-                            <li><i data-lucide="check"></i> <strong>Tableau de bord KPI</strong></li>
-                            <li><i data-lucide="check"></i> Interventions express (J+1)</li>
-                            <li><i data-lucide="check"></i> Préparation événements</li>
+                            <li><i data-lucide="check"></i> Responsable qualité sur site</li>
+                            <li><i data-lucide="check"></i> Protocoles spécialisés par secteur</li>
+                            <li><i data-lucide="check"></i> <strong>Dashboard temps réel</strong></li>
+                            <li><i data-lucide="check"></i> Intervention express même jour</li>
+                            <li><i data-lucide="check"></i> Support événementiel professionnel</li>
                         </ul>
-                        <button class="btn-outline">Choisir</button>
+                        <button class="btn-outline" disabled>Bientôt disponible</button>
                     </div>
                 </div>
             </div>
@@ -513,45 +635,45 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Demandez votre devis</h2>
-                    <p class="contact-subtitle">Réponse sous 48h • Diagnostic gratuit sur site</p>
+                    <h2>Rejoignez notre liste d'attente</h2>
+                    <p class="contact-subtitle">Soyez les premiers informés • Lancement prévu 2025</p>
                     
                     <div class="contact-features">
                         <div class="contact-feature">
-                            <i data-lucide="clock"></i>
+                            <i data-lucide="bell"></i>
                             <div>
-                                <h4>Réponse rapide</h4>
-                                <p>Devis personnalisé sous 48h</p>
+                                <h4>Notification prioritaire</h4>
+                                <p>Soyez alerté dès notre arrivée dans votre région</p>
                             </div>
                         </div>
                         <div class="contact-feature">
-                            <i data-lucide="map-pin"></i>
+                            <i data-lucide="star"></i>
                             <div>
-                                <h4>Diagnostic sur site</h4>
-                                <p>Évaluation gratuite de vos besoins</p>
+                                <h4>Offre de lancement</h4>
+                                <p>Bénéficiez d'avantages exclusifs pour les premiers clients</p>
                             </div>
                         </div>
                         <div class="contact-feature">
-                            <i data-lucide="phone"></i>
+                            <i data-lucide="users"></i>
                             <div>
-                                <h4>Interlocuteur unique</h4>
-                                <p>Un contact dédié pour votre projet</p>
+                                <h4>Communauté privilégiée</h4>
+                                <p>Participez au développement de nos services</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="contact-details">
                         <div class="detail">
-                            <i data-lucide="phone"></i>
-                            <span>01 23 45 67 89</span>
-                        </div>
-                        <div class="detail">
                             <i data-lucide="mail"></i>
                             <span>contact@clairetvert.fr</span>
                         </div>
                         <div class="detail">
-                            <i data-lucide="clock"></i>
-                            <span>Lun-Ven 8h-18h, Sam 9h-16h</span>
+                            <i data-lucide="map-pin"></i>
+                            <span>Prochainement dans votre région</span>
+                        </div>
+                        <div class="detail">
+                            <i data-lucide="calendar"></i>
+                            <span>Lancement prévu premier trimestre 2025</span>
                         </div>
                     </div>
                 </div>
@@ -611,8 +733,8 @@
                     </div>
                     
                     <button type="submit" class="btn-primary btn-large">
-                        <i data-lucide="send"></i>
-                        Demander un devis
+                        <i data-lucide="bell"></i>
+                        Rejoindre la liste d'attente
                     </button>
                 </form>
             </div>
@@ -669,10 +791,10 @@
                     <div class="footer-section">
                         <h4>Contact</h4>
                         <ul>
-                            <li>01 23 45 67 89</li>
                             <li>contact@clairetvert.fr</li>
-                            <li>Lun-Ven 8h-18h</li>
-                            <li>Sam 9h-16h</li>
+                            <li>Lancement 2025</li>
+                            <li>Rejoignez notre liste</li>
+                            <li>Soyez les premiers informés</li>
                         </ul>
                     </div>
                 </div>
