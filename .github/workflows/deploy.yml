@@ -25,6 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
+      - name: Remove CNAME for GitHub Pages deployment
+        run: |
+          if [ -f CNAME ]; then
+            echo "Removing CNAME file to enable GitHub Pages deployment to github.io domain"
+            rm CNAME
+          fi
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
